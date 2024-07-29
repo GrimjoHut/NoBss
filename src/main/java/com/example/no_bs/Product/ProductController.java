@@ -1,6 +1,5 @@
 package com.example.no_bs.Product;
 
-import com.example.no_bs.Exceptions.ProductNotFoundException;
 import com.example.no_bs.Product.CommandHadlers.CreateProductCommandHandler;
 import com.example.no_bs.Product.CommandHadlers.DeleteProductCommandHandler;
 import com.example.no_bs.Product.CommandHadlers.UpdateProductCommandHandler;
@@ -54,8 +53,5 @@ public class ProductController {
         return deleteProductCommandHandler.execute(id);
     }
 
-    @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<String> handleProductNotFoundException(){
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product Not Found");
-    }
+
 }
